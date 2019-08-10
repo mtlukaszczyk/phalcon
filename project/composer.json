@@ -1,0 +1,7 @@
+{
+    "require": {
+        "filp/whoops": "^2.4",
+        "illuminate/database": "^5.8",
+        "twig/twig": "^2.11"
+    }
+}
