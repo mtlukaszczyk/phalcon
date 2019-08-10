@@ -13,9 +13,4 @@ class TestController extends ControllerBase {
         $this->view->disable();
     }
 
-    public function test() {
-        echo 'test';
-        echo 'test2';
-    }
-
 }
