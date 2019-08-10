@@ -14,7 +14,7 @@ class TestController extends ControllerBase {
     }
 
     public function test() {
-        
+        echo 'test';
     }
 
 }
