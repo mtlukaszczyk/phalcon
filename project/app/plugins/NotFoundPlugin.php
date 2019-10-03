@@ -30,7 +30,7 @@ class NotFoundPlugin extends Plugin {
                     $dispatcher->forward(
                             [
                                 'controller' => 'errors',
-                                'action' => 'show404'
+                                'action' => 'notFound'
                             ]
                     );
                     return false;

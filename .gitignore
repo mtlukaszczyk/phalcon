@@ -1,4 +1,6 @@
 /.vagrant
 /project/vendor
+/project/app/compiled-templates
+/project/.env
 Vagrantfile
 /nbproject

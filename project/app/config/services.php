@@ -1,6 +1,5 @@
 <?php
 
-use Phalcon\Mvc\View;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Session\Adapter\Files as Session;
@@ -9,25 +8,6 @@ use Phalcon\Events\Manager as EventsManager;
 
 // Create a DI
 $di = new FactoryDefault();
-
-$di->set('view', function () {
-    $view = new View();
-    $view->setViewsDir('../app/views/');
-    $view->registerEngines([
-        App\Classes\Twig::DEFAULT_EXTENSION => function ($view, $di) {
-
-            $twigEngine = new App\Classes\Twig($view, $di, [
-                'cache' => false,
-            ]);
-
-            $twigEngine->prepareFunctions($di);
-
-            return $twigEngine;
-        }
-    ]);
-
-    return $view;
-});
 
 // Setup a base URI
 

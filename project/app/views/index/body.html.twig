@@ -56,11 +56,16 @@
                         </li>
 
                         <li block="block_1">
-                            <a>
+                            <a href="{{ baseUrl }}/">
                                 <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Dashboard
                             </a>
                         </li>
 
+                        <li block="block_1">
+                            <a href="{{ baseUrl }}/test/page">
+                                <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Subpage
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -71,7 +76,7 @@
                         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                             <!-- Begin page content -->
-                            <main role="main" class="container">
+                            <main role="main">
 
                                 {% block content %}
                                 {% endblock %}

@@ -14,6 +14,7 @@ $loader->registerDirs(
 
 $loader->registerNamespaces(
         [
+            'App\Classes\Engines' => '../app/classes/engines/',
             'App\Classes' => '../app/classes/',
             'App\Helpers' => '../app/helpers/',
             'App\Models' => '../app/models/',

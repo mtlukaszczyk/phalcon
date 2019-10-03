@@ -40,8 +40,8 @@ class SecurityPlugin extends Plugin {
             //Public area resources
             $publicResources = [
                 'index' => ['index'],
-                'user' => ['login'],
-                'errors' => ['show404', 'show401', 'show500'],
+                'user' => ['login', 'index'],
+                'errors' => ['notFound', 'show401', 'show500'],
                 'test' => ['index']
             ];
             foreach ($publicResources as $resource => $actions) {

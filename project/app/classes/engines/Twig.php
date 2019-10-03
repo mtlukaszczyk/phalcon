@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Classes;
+namespace App\Classes\Engines;
 
 use Phalcon\Mvc\View\Engine;
 use Phalcon\Mvc\View\EngineInterface;

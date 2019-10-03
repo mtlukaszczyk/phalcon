@@ -60,7 +60,7 @@ class ControllerBase extends Controller {
 
         $this->view->setVars(
                 [
-                    "baseUrl" => CONFIG['BASE_URL'],
+                    "baseUrl" => getenv('BASE_URL'),
                     'user' => [
                         'id' => $this->user == false ? false : $this->user->getID(),
                         'email' => $this->user == false ? false : $this->user->getEmail()

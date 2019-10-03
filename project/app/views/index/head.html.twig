@@ -9,7 +9,6 @@
         <title>Phalcon test</title>
 
         {{ outputCss() }}
-        {{ outputJs() }}
 
         <script>
             let baseUrl = "{{ baseUrl }}";
@@ -18,8 +17,9 @@
     </head>
 
     <body>
-
         {% block body %}
         {% endblock %}
+
+        {{ outputJs() }}
     </body>
 </html>

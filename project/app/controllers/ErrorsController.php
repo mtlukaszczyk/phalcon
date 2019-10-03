@@ -9,10 +9,11 @@ class ErrorsController extends ControllerBase {
     private $requestInstance;
 
     public function initialize() {
+        parent::initialize();
         $this->requestInstance = new Request();
     }
 
-    public function show404Action() {
+    public function notFoundAction() {
         if ($this->request->isAjax()) {
             $this->resultJSON(true, '404 Not found');
         }
