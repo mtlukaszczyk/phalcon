@@ -40,7 +40,7 @@ class ControllerBase extends Controller {
      * Runs always before action
      */
     public function initialize() {
-        if ($this->session->has('userID')) {
+        if ($this->session->has('userID') && $this->session->get('userIP') == $_SERVER['REMOTE_ADDR']) {
             $this->user = new User([
                 'id' => $this->session->get('userID'),
                 'email' => $this->session->get('userEmail')
@@ -61,6 +61,7 @@ class ControllerBase extends Controller {
         $this->view->setVars(
                 [
                     "baseUrl" => getenv('BASE_URL'),
+                    "langSymbol" => LANG_SYMBOL,
                     'user' => [
                         'id' => $this->user == false ? false : $this->user->getID(),
                         'email' => $this->user == false ? false : $this->user->getEmail()

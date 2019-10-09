@@ -39,10 +39,10 @@ class SecurityPlugin extends Plugin {
 
             //Public area resources
             $publicResources = [
-                'index' => ['index'],
-                'user' => ['login', 'index'],
-                'errors' => ['notFound', 'show401', 'show500'],
-                'test' => ['index']
+                'Index' => ['index'],
+                'User' => ['login', 'index'],
+                'Errors' => ['notfound', 'noaccess', 'servererror'],
+                'Test' => ['index']
             ];
             foreach ($publicResources as $resource => $actions) {
                 $acl->addResource(new Resource($resource), $actions);
@@ -84,7 +84,7 @@ class SecurityPlugin extends Plugin {
             if (!$allowed) {
                 $dispatcher->forward([
                     'controller' => 'errors',
-                    'action' => 'show401'
+                    'action' => 'noAccess'
                 ]);
                 $this->session->destroy();
                 return false;

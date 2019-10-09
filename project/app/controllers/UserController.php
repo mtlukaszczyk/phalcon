@@ -5,7 +5,8 @@ namespace App\Controllers;
 class UserController extends ControllerBase {
 
     public function indexAction() {
-        
+        echo 'user::index';
+        die();
     }
 
     public function loginAction() {
@@ -26,6 +27,7 @@ class UserController extends ControllerBase {
 
                     $this->session->set('userID', $data->id);
                     $this->session->set('userEmail', $data->email);
+                    $this->session->set('userIP', $_SERVER['REMOTE_ADDR']);
                     $error = false;
                 }
             } else {
@@ -39,6 +41,7 @@ class UserController extends ControllerBase {
     public function logoutAction() {
         $this->session->remove('userID');
         $this->session->remove('userEmail');
+        $this->session->remove('userIP');
 
         $this->resultJSON(false);
     }

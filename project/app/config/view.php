@@ -15,13 +15,14 @@ $di->set('view', function () {
 
             return $twigEngine;
         },
-        App\Classes\Engines\Volt::DEFAULT_EXTENSION => function ($view, $di) {
-            $voltEngine = new App\Classes\Engines\Volt($view, $di);
+            /*
+              App\Classes\Engines\Volt::DEFAULT_EXTENSION => function ($view, $di) {
+              $voltEngine = new App\Classes\Engines\Volt($view, $di);
 
-            $voltEngine->prepareFunctions($di);
+              $voltEngine->prepareFunctions($di);
 
-            return $voltEngine;
-        }
+              return $voltEngine;
+              } */
     ]);
 
 

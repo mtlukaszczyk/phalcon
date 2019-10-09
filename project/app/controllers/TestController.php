@@ -5,7 +5,7 @@ namespace App\Controllers;
 class TestController extends ControllerBase {
 
     public function indexAction() {
-        echo 'index';
+        echo 'test::index';
         $this->view->disable();
     }
 
@@ -20,6 +20,14 @@ class TestController extends ControllerBase {
 
     public function voltAction() {
         
+    }
+
+    public function testTestAction($parameter, $parameter2) {
+        echo 'test_test';
+        echo '--';
+        echo $parameter;
+        echo '--';
+        echo $parameter2;
     }
 
 }

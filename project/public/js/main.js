@@ -1,10 +1,10 @@
 function logIn() {
 
-    let user = $('#login').val();
-    let password = $('#pass').val();
+    const user = $('#login').val();
+    const password = $('#pass').val();
 
     $.ajax({
-        url: baseUrl + '/user/login/',
+        url: baseUrl + '/' + langSymbol + '/user/login/',
         method: "POST",
         dataType: 'json',
         data: {
@@ -14,21 +14,17 @@ function logIn() {
     }).done(function (result) {
         window.location.reload();
 
-    }).fail(function () {
-
     });
 }
 
 function logOut() {
 
     $.ajax({
-        url: baseUrl + '/user/logout/',
+        url: baseUrl + '/' + langSymbol + '/user/logout/',
         method: "POST",
         dataType: 'json',
     }).done(function (result) {
         window.location.reload();
-
-    }).fail(function () {
 
     });
 }

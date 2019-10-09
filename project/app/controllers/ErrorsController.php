@@ -2,15 +2,10 @@
 
 namespace App\Controllers;
 
-use Phalcon\Http\Request;
-
 class ErrorsController extends ControllerBase {
-
-    private $requestInstance;
 
     public function initialize() {
         parent::initialize();
-        $this->requestInstance = new Request();
     }
 
     public function notFoundAction() {
@@ -19,13 +14,13 @@ class ErrorsController extends ControllerBase {
         }
     }
 
-    public function show500Action() {
+    public function serverErrorAction() {
         if ($this->request->isAjax()) {
             $this->resultJSON(true, 'Internal server error');
         }
     }
 
-    public function show401Action() {
+    public function noAccessAction() {
         if ($this->request->isAjax()) {
             $this->resultJSON(true, 'Proszę się zalogować');
         }

@@ -5,6 +5,7 @@ use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Session\Adapter\Files as Session;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Events\Manager as EventsManager;
+use Phalcon\Events\Event;
 
 // Create a DI
 $di = new FactoryDefault();
@@ -40,6 +41,31 @@ $di->set('dispatcher', function () {
     $eventsManager->attach(
             'dispatch:beforeException', new NotFoundPlugin()
     );
+
+    $eventsManager->attach('dispatch:beforeDispatchLoop', function(Event $event, Dispatcher $dispatcher) {
+        $params = $dispatcher->getParams();
+
+        if (isset($params['language'])) {
+            define('LANG_SYMBOL', $params['language']);
+        } else {
+            define('LANG_SYMBOL', 'de');
+        }
+
+        unset($params['language']);
+        $dispatcher->setParams($params);
+
+        return $dispatcher;
+    });
+
+    $eventsManager->attach("dispatch", function($event, $dispatcher) {
+        $actionName = Phalcon\Text::camelize($dispatcher->getActionName());
+        $controllerName = Phalcon\Text::camelize($dispatcher->getControllerName());
+        $dispatcher->setActionName(lcfirst($actionName));
+        $dispatcher->setControllerName($controllerName);
+
+        return $dispatcher;
+    });
+
 
     $dispatcher = new Dispatcher();
 

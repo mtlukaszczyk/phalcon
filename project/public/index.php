@@ -19,6 +19,7 @@ require __DIR__ . "/../app/config/whoops.php";
 require __DIR__ . "/../app/config/services.php";
 require __DIR__ . "/../app/config/view.php";
 require __DIR__ . "/../app/config/eloquent.php";
+require __DIR__ . "/../app/config/router.php";
 
 $application = new Application($di);
 
