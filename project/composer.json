@@ -1,7 +1,7 @@
 {
     "require": {
         "filp/whoops": "^2.4",
-        "illuminate/database": "^5.8",
+        "illuminate/database": "^6.20",
         "twig/twig": "^2.11",
         "robmorgan/phinx": "0.5.*",
         "doctrine/dbal": "^2.9",
